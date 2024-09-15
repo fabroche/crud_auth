@@ -28,10 +28,10 @@ router = routers.DefaultRouter()
 router.register(r'personas', PersonaApiView)
 
 urlpatterns = [
-    path('api/v1/', include(router.urls)),
-    re_path('login', views.login),
-    re_path('register', views.register),
-    re_path('profile', views.profile),
+    re_path('api/v1/', include(router.urls)),
+    re_path('login', views.login, name='login'),
+    re_path('register', views.register, name='register'),
+    re_path('profile', views.profile, name='profile'),
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'docs/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
