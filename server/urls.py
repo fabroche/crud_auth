@@ -25,7 +25,7 @@ schema_view = get_schema_view(
 
 router = routers.DefaultRouter()
 
-router.register(r'personas', PersonaApiView)
+router.register(r'personas', PersonaApiView, basename='persona')
 
 urlpatterns = [
     re_path('api/v1/', include(router.urls)),

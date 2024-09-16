@@ -9,7 +9,7 @@ class TestSetUp(APITestCase):
         self.register_url = reverse('register')
         self.login_url = reverse('login')
         self.profile_url = reverse('profile')
-        self.personas_url = '/api/v1/personas/'
+        self.personas_url = reverse('persona-list')
 
         self.user_data = {
             'username': 'test-user',
