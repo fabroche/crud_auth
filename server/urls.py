@@ -29,6 +29,7 @@ router.register(r'personas', PersonaApiView, basename='persona')
 
 urlpatterns = [
     re_path('api/v1/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
     re_path('login', views.login, name='login'),
     re_path('register', views.register, name='register'),
     re_path('profile', views.profile, name='profile'),
